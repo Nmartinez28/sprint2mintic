@@ -15,12 +15,9 @@ export default function Menu() {
                         </li> 
                         <li className="nav-item">
                             <Link className="nav-link" to="/Registro">Registro</Link>
-                        </li> 
+                        </li>                       
                         <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-                        </li>                      
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/ventas">Ventas</Link>
+                            <Link className="nav-link" to="/Listado_ordenes">Listado órdenes</Link>
                         </li>                        
                     </ul>
                 </div>

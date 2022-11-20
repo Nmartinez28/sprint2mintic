@@ -8,7 +8,7 @@ export default function Entrar(){
             </p>
             <p>
                 <label className="form-label" htmlFor="">Password</label>
-                <input className="form-control" type="text" />
+                <input className="form-control" type="password" />
             </p>
             <button>Entrar</button>
         </form>

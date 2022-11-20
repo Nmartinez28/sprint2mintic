@@ -15,10 +15,19 @@ export default function Menu() {
                         </li> 
                         <li className="nav-item">
                             <Link className="nav-link" to="/Registro">Registro</Link>
-                        </li>                       
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/Noticias">Noticias</Link>
+                        </li>                         
                         <li className="nav-item">
                             <Link className="nav-link" to="/Listado_ordenes">Listado órdenes</Link>
-                        </li>                        
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/Registro_ordenes">Registro órdenes</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/A_ordenes">Actualización de órdenes</Link>
+                        </li>                      
                     </ul>
                 </div>
             </div>

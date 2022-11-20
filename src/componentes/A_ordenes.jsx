@@ -2,43 +2,43 @@ export default function Registro_ordenes(){
     return(
         <form action="">
             <p>
-                <label htmlFor="">Fecha</label>
-                <input type="date"/>
+                <label className="form-label" htmlFor="">Fecha</label>
+                <input className="form-control" type="date"/>
             </p>
             <p>
-                <label htmlFor="">Hora</label>
-                <input type="time"/>
+                <label className="form-label" htmlFor="">Hora</label>
+                <input className="form-control" type="time"/>
             </p>
             <p>
-                <label htmlFor="">Estado</label>
-                <select name="Estado" id="Estado">
+                <label className="form-label" htmlFor="">Estado</label>
+                <select className="form-control" name="Estado" id="Estado">
                     <option value="Guardado">Guardado</option>
                     <option value="Sin guardar">Sin Guardar</option>
                 </select>
             </p>
             <p>
-                <label htmlFor="">Largo </label>
-                <input type="number"/>
+                <label className="form-label" htmlFor="">Largo </label>
+                <input className="form-control" type="number"/>
             </p>  
             <p>
-                <label htmlFor="">Ancho </label>
-                <input type="number"/>
+                <label className="form-label" htmlFor="">Ancho </label>
+                <input className="form-control" type="number"/>
             </p>
             <p>
-                <label htmlFor="">Alto </label>
-                <input type="number"/>
+                <label className="form-label" htmlFor="">Alto </label>
+                <input className="form-control" type="number"/>
             </p>     
             <p>
-                <label htmlFor="">Peso </label>
-                <input type="number"/>
+                <label className="form-label" htmlFor="">Peso </label>
+                <input className="form-control" type="number"/>
             </p>
             <p>
-                <label htmlFor="">Dirección de recogida </label>
-                <input type="Text"/>
+                <label className="form-label" htmlFor="">Dirección de recogida </label>
+                <input className="form-control" type="Text"/>
             </p>
             <p>
-            <label htmlFor="">Ciudad de Recogida </label>
-                <select name="C_recogida" id="C_recogida">
+            <label className="form-label" htmlFor="">Ciudad de Recogida </label>
+                <select className="form-control" name="C_recogida" id="C_recogida">
                     <option value="Bogota">Bogotá</option>
                     <option value="Medellin">Medellín</option>
                     <option value="Cali">Cali</option>
@@ -48,20 +48,20 @@ export default function Registro_ordenes(){
                 </select>
             </p>
             <p>
-                <label htmlFor="">Nombre destinatario </label>
-                <input type="Text"/>
+                <label className="form-label" htmlFor="">Nombre destinatario </label>
+                <input className="form-control" type="Text"/>
             </p>
             <p>
-                <label htmlFor="">Cédula/nit destinatario </label>
-                <input type="Text"/>
+                <label className="form-label" htmlFor="">Cédula/nit destinatario </label>
+                <input className="form-control" type="Text"/>
             </p>
             <p>
-                <label htmlFor="">Dirección de entrega </label>
-                <input type="Text"/>
+                <label className="form-label" htmlFor="">Dirección de entrega </label>
+                <input className="form-control" type="Text"/>
             </p>
             <p>
-                <label htmlFor="">Ciudad de Entrega </label>
-                <select name="C_entrega" id="C_entrega">
+                <label className="form-label" htmlFor="">Ciudad de Entrega </label>
+                <select className="form-control" name="C_entrega" id="C_entrega">
                     <option value="Bogota">Bogotá</option>
                     <option value="Medellin">Medellín</option>
                     <option value="Cali">Cali</option>
@@ -70,7 +70,7 @@ export default function Registro_ordenes(){
                     <option value="Bucaramanga">Bucaramanga</option>
                 </select>
             </p>
-            <button>Acutalizar orden</button>
+            <button>Actualizar orden</button>
         </form>    
     )
 }

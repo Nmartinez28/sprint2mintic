@@ -1,6 +1,7 @@
 import './App.css'
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import Entrar from './componentes/Entrar'
+import Home from './componentes/Home'
 import Menu from './componentes/Menu'
 import Registro from './componentes/Registro'
 import Listado_ordenes from './componentes/Listado_ordenes'
@@ -14,6 +15,7 @@ function App() {
     <BrowserRouter>
       <Menu />
       <Routes>
+        <Route path='/' element={ <Home /> } />
         <Route path='/Entrar' element={<Entrar />}/>
         <Route path='/Registro' element={<Registro />}/>
         <Route path='/Noticias' element={<Noticias />}/>

@@ -24,6 +24,7 @@ export default function Entrar() {
 
     return (
         <form action="">
+            <h2 className="p-5 text-muted">Inicio de sesion</h2>
             <p>
                 <label className="form-label" htmlFor="">Username</label>
                 <input ref={UsernameRef} className="form-control" type="text" />

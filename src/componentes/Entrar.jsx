@@ -1,28 +1,23 @@
 import { useRef } from "react"
 
-export default function Entrar() {
-
-    //Crea los hooks de referencia para manipular los usuarios y password. 
+export default function Entrar() { 
     const UsernameRef = useRef()
     const PasswordRef = useRef()
 
-    //Función para enviar datos al servidor. 
     function Entrar() {
-        //Captura el usename y password. 
         const usuario = UsernameRef.current.value;
-        const password = PasswordRef.current.value;
-
-        //Función que consume la API
+        const contraseña = PasswordRef.current.value;
+        
         fetch("http://localhost:8000/login", {
             headers: { "content-type": "application/json" },
             method: "POST",
-            body: JSON.stringify({ usuario, password })
+            body: JSON.stringify({ usuario, contraseña })
         }).then(res => res.json())
             .then(res => {
                 if (res.estado === "ok") {
                     window.location.href = res.url;
                 } else {
-                    alert("Error: Por favor verificar usuario o contraseña")
+                    alert("¡Error! Por favor, verifica tu usuario o contraseña.")
                 }
             })
     }
@@ -37,7 +32,7 @@ export default function Entrar() {
                 <label className="form-label" htmlFor="">Password</label>
                 <input ref={PasswordRef} className="form-control" type="password" />
             </p>
-            <button onClick={Entrar}>Entrar</button>
+            <button onClick={Entrar} type="button" className="btn btn-primary">Entrar</button>
         </form>
     )
 }

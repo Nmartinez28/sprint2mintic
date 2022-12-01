@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Menu() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
                 <a className="navbar-brand" href="/">EnvíaYa!</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,10 +15,7 @@ export default function Menu() {
                         </li> 
                         <li className="nav-item">
                             <Link className="nav-link" to="/Registro">Registro</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/Noticias">Noticias</Link>
-                        </li>                         
+                        </li>                        
                         <li className="nav-item">
                             <Link className="nav-link" to="/Listado_ordenes">Listado órdenes</Link>
                         </li>
@@ -27,7 +24,7 @@ export default function Menu() {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/A_ordenes">Actualización de órdenes</Link>
-                        </li>                      
+                        </li>                    
                     </ul>
                 </div>
             </div>

@@ -26,6 +26,7 @@ export default function Registro(){
 
     return (
         <form>
+            <h2 className="p-4 text-secondary">Registro</h2>
             <p>
                 <label className="form-label" htmlFor="">Name</label>
                 <input ref={NameRef} className="form-control" type="text" />

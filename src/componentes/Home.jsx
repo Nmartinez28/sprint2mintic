@@ -19,11 +19,30 @@ export default function Home() {
 
     return (
         <form action="">
-            <img src="src\assets\truck.PNG"></img>
-            <p>
-                <label className="form-label" htmlFor="">Envíos a todo destino</label>
-            </p>
-            <button onClick={Cotizar} type="button" className="btn btn-primary">Cotiza tu envío</button>
+            <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            <div className="row">
+                                <img src="src\assets\icono-envio.PNG"/>
+                            </div>
+                        </div>
+                        <div className="col text-center">
+                            <h2 className="p-4 text-muted">Canales de Atencion</h2>
+                            <div>
+                                <h5>Telefono</h5>
+                                <p>(xxx)-xx xx</p>
+                                <h5>Email</h5>
+                                <p>atencionalcliente@enviaya.com</p> 
+                                <img src="src\assets\social-media.PNG" height="40"/>
+                            </div>
+                            <h2 className="p-4 text-muted">Horarios de Atencion</h2>
+                            <div>
+                                <p>Lunes a viernes: 8am a 5pm</p>
+                                <p>Sabados: 8am a 11am</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
         </form>
     )
 }

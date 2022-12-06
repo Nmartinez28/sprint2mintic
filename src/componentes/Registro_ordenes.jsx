@@ -92,6 +92,7 @@ export default function Registro_ordenes(){
                 <input className="form-control" type="Tel"/>
             </p>
             */}
+            <div class="row mt-3"></div>
             <div className="row justify-content-center">
                     <div className="col p3">
                         <label htmlFor="" className="form-label">Fecha:</label>
@@ -103,8 +104,7 @@ export default function Registro_ordenes(){
                     </div>
                     <div className="col p3">
                         <label className="form-label" htmlFor="">Estado</label>
-                        <select className="form-control" name="Estado" id="Estado" >
-                            <option value=""></option>
+                        <select className="form-control" name="Estado" id="Estado">
                             <option value="Guardado">Guardado</option>
                             <option value="Sin guardar">Sin Guardar</option>
                         </select>
@@ -233,7 +233,7 @@ export default function Registro_ordenes(){
                     <label className="form-label" htmlFor="">Dirección de entrega</label>
                     <input className="form-control" type="Text"/>
                 </div>
-            </div>
+            </div> 
             <button type="button" onClick={Registrar_orden} className="btn btn-primary">Crear orden</button>
         </form>    
     )

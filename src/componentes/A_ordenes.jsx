@@ -27,8 +27,8 @@ export default function A_ordenes(){
         const ancho = WidthRef.current.value;
         const altura = HeightRef.current.value;
         const peso = WeightRef.current.value;
-        const ciudad = City1Ref.current.value;
-        const direccion = Address1Ref.current.value;
+        const ciudad1 = City1Ref.current.value;
+        const direccion1 = Address1Ref.current.value;
         const ciudad2 = City2Ref.current.value;
         const direccion2 = Address2Ref.current.value;
 
@@ -37,7 +37,7 @@ export default function A_ordenes(){
                 "content-type": "application/json", //TIPO MIME
             },
             method: "POST",
-            body: JSON.stringify({ name, id, tlf, fecha, hora, estado, largo, ancho, altura, peso, ciudad, direccion, ciudad2, direccion2 })
+            body: JSON.stringify({largo, ancho, altura, peso, name, id, tlf, fecha, hora, estado, ciudad1, direccion1, ciudad2, direccion2 })
         })
             .then(data => data.json())
             .then(res => {
@@ -49,54 +49,111 @@ export default function A_ordenes(){
 
     return(
         <form action="">
-            <p>
-                <label className="form-label" htmlFor="">Nombre del destinatario</label>
-                <input className="form-control" type="Text"/>
-            </p>
-            <p>
-                <label className="form-label" htmlFor="">Cédula/nit del destinatario</label>
-                <input className="form-control" type="Text"/>
-            </p>
-            <p>
-                <label className="form-label" htmlFor="">Teléfono de contacto</label>
-                <input className="form-control" type="Tel"/>
-            </p>
-            <p>
-                <label className="form-label" htmlFor="">Fecha</label>
-                <input className="form-control" type="date"/>
-            </p>
-            <p>
-                <label className="form-label" htmlFor="">Hora</label>
-                <input className="form-control" type="time"/>
-            </p>
-            <p>
-                <label className="form-label" htmlFor="">Estado</label>
-                <select className="form-control" name="Estado" id="Estado">
-                    <option value="Guardado">Guardado</option>
-                    <option value="Sin guardar">Sin Guardar</option>
-                </select>
-            </p>
-            <p>
-                <label className="form-label" htmlFor="">Largo</label>
-                <input className="form-control" type="number"/>
-            </p>  
-            <p>
-                <label className="form-label" htmlFor="">Ancho</label>
-                <input className="form-control" type="number"/>
-            </p>
-            <p>
-                <label className="form-label" htmlFor="">Alto</label>
-                <input className="form-control" type="number"/>
-            </p>     
-            <p>
-                <label className="form-label" htmlFor="">Peso</label>
-                <input className="form-control" type="number"/>
-            </p>
-            <p>
+        <div class="row mt-3"></div>
+        <h2 className="p-4 text-secondary">Nuevo envio</h2>
+            <div className="row justify-content-center">
+                    <div className="col-2 p3">
+                        <label htmlFor="" className="form-label">Largo:</label>
+                        <input type="number" className="form-control" placeholder="cm" required />
+                    </div>
+                    <div className="col-2 p3">
+                        <label htmlFor="" className="form-label">Ancho:</label>
+                        <input type="number" className="form-control" placeholder="cm" required />
+                    </div>
+                    <div className="col-2 p3">
+                        <label htmlFor="" className="form-label">Altura:</label>
+                        <input type="number" className="form-control" placeholder="cm" required />
+                    </div>
+                    <div className="col-2 p3">
+                        <label htmlFor="" className="form-label">Peso:</label>
+                        <input type="number" className="form-control" placeholder="Kg" required />
+                    </div>
+                </div>
+        <div class="row mt-3"></div>
+        <p>
+            <label className="form-label" htmlFor="">Nombre del destinatario</label>
+            <input className="form-control" type="Text"/>
+        </p>
+        <div className="row justify-content-center">
+                <div className="col p3">
+                    <label className="form-label" htmlFor="">Cédula/nit del destinatario</label>
+                    <input className="form-control" type="number"/>
+                </div>
+                <div className="col p3">
+                    <label className="form-label" htmlFor="">Teléfono de contacto</label>
+                    <input className="form-control" type="Tel"/>
+                </div>
+        </div>
+        {/*
+        <p>
+            <label className="form-label" htmlFor="">Cédula/nit del destinatario</label>
+            <input className="form-control" type="Text"/>
+        </p>
+        <p>
+            <label className="form-label" htmlFor="">Teléfono de contacto</label>
+            <input className="form-control" type="Tel"/>
+        </p>
+        */}
+        <div class="row mt-3"></div>
+        <div className="row justify-content-center">
+                <div className="col p3">
+                    <label htmlFor="" className="form-label">Fecha:</label>
+                    <input type="date" className="form-control" />
+                </div>
+                <div className="col p3">
+                    <label htmlFor="" className="form-label">Hora:</label>
+                    <input type="time" className="form-control"/>
+                </div>
+                <div className="col p3">
+                    <label className="form-label" htmlFor="">Estado</label>
+                    <select className="form-control" name="Estado" id="Estado">
+                        <option value=""></option>
+                        <option value="Guardado">Guardado</option>
+                        <option value="Sin guardar">Sin Guardar</option>
+                    </select>
+                </div>
+        </div>
+         {/*
+        <p>
+            <label className="form-label" htmlFor="">Fecha</label>
+            <input className="form-control" type="date"/>
+        </p>
+        <p>
+            <label className="form-label" htmlFor="">Hora</label>
+            <input className="form-control" type="time"/>
+        </p>
+        <p>
+            <label className="form-label" htmlFor="">Estado</label>
+            <select className="form-control" name="Estado" id="Estado">
+                <option value="Guardado">Guardado</option>
+                <option value="Sin guardar">Sin Guardar</option>
+            </select>
+        </p>
+        {/*
+        <p>
+            <label className="form-label" htmlFor="">Largo</label>
+            <input className="form-control" type="number"/>
+        </p>  
+        <p>
+            <label className="form-label" htmlFor="">Ancho</label>
+            <input className="form-control" type="number"/>
+        </p>
+        <p>
+            <label className="form-label" htmlFor="">Alto</label>
+            <input className="form-control" type="number"/>
+        </p>     
+        <p>
+            <label className="form-label" htmlFor="">Peso</label>
+            <input className="form-control" type="number"/>
+        </p>
+        */}
+        <div class="row mt-3"></div>
+        <div className="row justify-content-center">
+            <div className="col p3">
                 <label className="form-label" htmlFor="">Dirección de recogida</label>
                 <input className="form-control" type="Text"/>
-            </p>
-            <p>
+            </div>
+            <div className="col p3">
             <label className="form-label" htmlFor="">Ciudad de recogida</label>
                 <select className="form-control" name="C_recogida" id="C_recogida">
                     <option value=""></option>
@@ -133,12 +190,11 @@ export default function A_ordenes(){
                     <option value="Villavicencio">Villavicencio</option>
                     <option value="Yopal">Yopal</option>
                 </select>
-            </p>
-            <p>
-                <label className="form-label" htmlFor="">Dirección de entrega</label>
-                <input className="form-control" type="Text"/>
-            </p>
-            <p>
+            </div>
+        </div>     
+        <div class="row mt-3"></div>
+        <div className="row justify-content-center">
+            <div className="col p3">
                 <label className="form-label" htmlFor="">Ciudad de entrega</label>
                 <select className="form-control" name="C_entrega" id="C_entrega">
                     <option value=""></option>
@@ -175,7 +231,12 @@ export default function A_ordenes(){
                     <option value="Villavicencio">Villavicencio</option>
                     <option value="Yopal">Yopal</option>
                 </select>
-            </p>
+                </div> 
+                <div className="col p3">
+                <label className="form-label" htmlFor="">Dirección de entrega</label>
+                <input className="form-control" type="Text"/>
+            </div>
+        </div> 
             <button type="button" onClick={Actualizar_orden} className="btn btn-primary">Actualizar orden</button>
         </form>
         )

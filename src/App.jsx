@@ -7,7 +7,6 @@ import Registro from './componentes/Registro'
 import Listado_ordenes from './componentes/Listado_ordenes'
 import Registro_ordenes from './componentes/Registro_ordenes'
 import A_ordenes from './componentes/A_ordenes'
-import Noticias from './componentes/Noticias'
 
 function App() {
 
@@ -18,7 +17,6 @@ function App() {
         <Route path='/' element={ <Home /> } />
         <Route path='/Entrar' element={<Entrar />}/>
         <Route path='/Registro' element={<Registro />}/>
-        <Route path='/Noticias' element={<Noticias />}/>
         <Route path='/Listado_ordenes' element={<Listado_ordenes/>}/>
         <Route path='/Registro_ordenes' element={<Registro_ordenes/>}/>
         <Route path='/A_ordenes' element={<A_ordenes/>}/>

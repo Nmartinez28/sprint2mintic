@@ -28,14 +28,14 @@ export default function Registro_ordenes(){
         const altura = HeightRef.current.value;
         const peso = WeightRef.current.value;
         const ciudad1 = City1Ref.current.value;
-        const dirección1 = Address1Ref.current.value;
+        const direccion1 = Address1Ref.current.value;
         const ciudad2 = City2Ref.current.value;
-        const dirección2 = Address2Ref.current.value;
+        const direccion2 = Address2Ref.current.value;
 
         fetch("http://localhost:8000/registro-ordenes", {
             headers: { "content-type": "application/json" },
             method: "POST",
-            body: JSON.stringify({ name, id, tlf, fecha, hora, estado, largo, ancho, altura, peso, ciudad1, dirección1, ciudad2, dirección2 }),
+            body: JSON.stringify({largo, ancho, altura, peso, name, id, tlf, fecha, hora, estado, ciudad1, direccion1, ciudad2, direccion2 }),
         }).then(data => data.json())
             .then(res => {
                 if (res.estado === "ok") {

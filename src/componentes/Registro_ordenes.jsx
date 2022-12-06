@@ -27,22 +27,25 @@ export default function Registro_ordenes(){
         const ancho = WidthRef.current.value;
         const altura = HeightRef.current.value;
         const peso = WeightRef.current.value;
-        const ciudad = City1Ref.current.value;
-        const direccion = Address1Ref.current.value;
+        const ciudad1 = City1Ref.current.value;
+        const dirección1 = Address1Ref.current.value;
         const ciudad2 = City2Ref.current.value;
-        const direccion2 = Address2Ref.current.value;
+        const dirección2 = Address2Ref.current.value;
 
         fetch("http://localhost:8000/registro-ordenes", {
             headers: { "content-type": "application/json" },
             method: "POST",
-            body: JSON.stringify({largo, ancho, altura, peso, name, id, tlf, fecha, hora, estado, ciudad, direccion, ciudad2, direccion2 })
-        })
-            .then(data => data.json())
+            body: JSON.stringify({ name, id, tlf, fecha, hora, estado, largo, ancho, altura, peso, ciudad1, dirección1, ciudad2, dirección2 }),
+        }).then(data => data.json())
             .then(res => {
                 if (res.estado === "ok") {
                     window.location.href = res.url;
+                } else {
+                    alert("¡Error!: La orden no se pudo registrar")
                 }
             })
+        .catch(err => alert(err))
+        .finally() 
     }
 
     return(
@@ -105,6 +108,7 @@ export default function Registro_ordenes(){
                     <div className="col p3">
                         <label className="form-label" htmlFor="">Estado</label>
                         <select className="form-control" name="Estado" id="Estado">
+                            <option value=""></option>
                             <option value="Guardado">Guardado</option>
                             <option value="Sin guardar">Sin Guardar</option>
                         </select>

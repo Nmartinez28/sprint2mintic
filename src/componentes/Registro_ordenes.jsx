@@ -35,7 +35,7 @@ export default function Registro_ordenes(){
         fetch("http://localhost:8000/registro-ordenes", {
             headers: { "content-type": "application/json" },
             method: "POST",
-            body: JSON.stringify({largo, ancho, altura, peso, name, id, tlf, fecha, hora, estado, ciudad1, direccion1, ciudad2, direccion2 }),
+            body: JSON.stringify({ name, id, tlf, fecha, hora, estado, largo, ancho, altura, peso, ciudad1, direccion1, ciudad2, direccion2 }),
         }).then(data => data.json())
             .then(res => {
                 if (res.estado === "ok") {
@@ -51,33 +51,15 @@ export default function Registro_ordenes(){
     return(
         <form action="">
             <div class="row mt-3"></div>
-            <h2 className="p-4 text-secondary">Nuevo envio</h2>
-                <div className="row justify-content-center">
-                        <div className="col-2 p3">
-                            <label htmlFor="" className="form-label">Largo:</label>
-                            <input type="number" className="form-control" placeholder="cm" required />
-                        </div>
-                        <div className="col-2 p3">
-                            <label htmlFor="" className="form-label">Ancho:</label>
-                            <input type="number" className="form-control" placeholder="cm" required />
-                        </div>
-                        <div className="col-2 p3">
-                            <label htmlFor="" className="form-label">Altura:</label>
-                            <input type="number" className="form-control" placeholder="cm" required />
-                        </div>
-                        <div className="col-2 p3">
-                            <label htmlFor="" className="form-label">Peso:</label>
-                            <input type="number" className="form-control" placeholder="Kg" required />
-                        </div>
-                    </div>
-            <div class="row mt-3"></div>
+            <h2 className="p-4 text-secondary">Registro de Orden</h2>
+            <div class="row mt-2"></div>
             <p>
                 <label className="form-label" htmlFor="">Nombre del destinatario</label>
                 <input className="form-control" type="Text"/>
             </p>
             <div className="row justify-content-center">
                     <div className="col p3">
-                        <label className="form-label" htmlFor="">Cédula/nit del destinatario</label>
+                        <label className="form-label" htmlFor="">Cédula/NIT del destinatario</label>
                         <input className="form-control" type="number"/>
                     </div>
                     <div className="col p3">
@@ -85,16 +67,6 @@ export default function Registro_ordenes(){
                         <input className="form-control" type="Tel"/>
                     </div>
             </div>
-            {/*
-            <p>
-                <label className="form-label" htmlFor="">Cédula/nit del destinatario</label>
-                <input className="form-control" type="Text"/>
-            </p>
-            <p>
-                <label className="form-label" htmlFor="">Teléfono de contacto</label>
-                <input className="form-control" type="Tel"/>
-            </p>
-            */}
             <div class="row mt-3"></div>
             <div className="row justify-content-center">
                     <div className="col p3">
@@ -114,40 +86,26 @@ export default function Registro_ordenes(){
                         </select>
                     </div>
             </div>
-             {/*
-            <p>
-                <label className="form-label" htmlFor="">Fecha</label>
-                <input className="form-control" type="date"/>
-            </p>
-            <p>
-                <label className="form-label" htmlFor="">Hora</label>
-                <input className="form-control" type="time"/>
-            </p>
-            <p>
-                <label className="form-label" htmlFor="">Estado</label>
-                <select className="form-control" name="Estado" id="Estado">
-                    <option value="Guardado">Guardado</option>
-                    <option value="Sin guardar">Sin Guardar</option>
-                </select>
-            </p>
-            {/*
-            <p>
-                <label className="form-label" htmlFor="">Largo</label>
-                <input className="form-control" type="number"/>
-            </p>  
-            <p>
-                <label className="form-label" htmlFor="">Ancho</label>
-                <input className="form-control" type="number"/>
-            </p>
-            <p>
-                <label className="form-label" htmlFor="">Alto</label>
-                <input className="form-control" type="number"/>
-            </p>     
-            <p>
-                <label className="form-label" htmlFor="">Peso</label>
-                <input className="form-control" type="number"/>
-            </p>
-            */}
+            <div class="row mt-4"></div>
+            <div className="row justify-content-center">
+                        <div className="col-2 p3">
+                            <label htmlFor="" className="form-label">Largo:</label>
+                            <input type="number" className="form-control" placeholder="cm" required />
+                        </div>
+                        <div className="col-2 p3">
+                            <label htmlFor="" className="form-label">Ancho:</label>
+                            <input type="number" className="form-control" placeholder="cm" required />
+                        </div>
+                        <div className="col-2 p3">
+                            <label htmlFor="" className="form-label">Altura:</label>
+                            <input type="number" className="form-control" placeholder="cm" required />
+                        </div>
+                        <div className="col-2 p3">
+                            <label htmlFor="" className="form-label">Peso:</label>
+                            <input type="number" className="form-control" placeholder="Kg" required />
+                        </div>
+                    </div>
+                    <div class="row mt-4"></div>
             <div class="row mt-3"></div>
             <div className="row justify-content-center">
                 <div className="col p3">
@@ -193,8 +151,12 @@ export default function Registro_ordenes(){
                     </select>
                 </div>
             </div>     
-            <div class="row mt-3"></div>
+            <div class="row mt-4"></div>
             <div className="row justify-content-center">
+                <div className="col p3">
+                    <label className="form-label" htmlFor="">Dirección de entrega</label>
+                    <input className="form-control" type="Text"/>
+                </div>
                 <div className="col p3">
                     <label className="form-label" htmlFor="">Ciudad de entrega</label>
                     <select className="form-control" name="C_entrega" id="C_entrega">
@@ -233,11 +195,8 @@ export default function Registro_ordenes(){
                         <option value="Yopal">Yopal</option>
                     </select>
                     </div> 
-                    <div className="col p3">
-                    <label className="form-label" htmlFor="">Dirección de entrega</label>
-                    <input className="form-control" type="Text"/>
-                </div>
             </div> 
+            <div class="row mt-4"></div>
             <button type="button" onClick={Registrar_orden} className="btn btn-primary">Crear orden</button>
         </form>    
     )
